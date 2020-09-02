@@ -2,6 +2,6 @@
 using namespace std;
 int main()
 {
-    cout<<"first VS code prgm"<<endl;
+    cout<<"just do it"<<endl;
     return 0;
 }
