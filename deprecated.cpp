@@ -12,4 +12,5 @@ void acha()
 int main()
 {
     bekar();
+    acha();
 }
