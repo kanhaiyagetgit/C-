@@ -1,1 +1,13 @@
 When u add constexpr before a function u actually make that function to be executed at compile time
+
+When u say that destructor is an instance member function or an object is an instance of a class u mean
+it works only for the object / occurence of a real world entity
+
+Destructor can never be static
+Constructor and destructor hv no return types and hence no function types
+Destructor takes no arguments unlike Constructor which can take arguments
+Since no parameters are passed to destructors overloading is not possible
+Compiler automatic creates Constructor and destructor by default
+Default destructor has an empty body
+Destructor is the last fn which is called by an object before it is destroyed
+Destructor is used to release resources allocated to an object.
