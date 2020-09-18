@@ -17,5 +17,4 @@ int main()
     cout<<get<0>(T)<<" "<<get<1>(T)<<" "<<get<2>(T)<<" "<<endl;
     auto P=tuple_cat(T,U);//to concatenate 2 tuples
     cout<<get<0>(P)<<" "<<get<1>(P)<<" "<<get<2>(P)<<" "<<get<3>(P)<<" "<<get<4>(P)<<" "<<get<5>(P)<<" ";
-
 }
