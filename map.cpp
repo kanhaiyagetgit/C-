@@ -11,7 +11,8 @@ int main()
     };
     M.insert(pair<int,string>(4,"Pyaroo"));
     cout<<M[2]<<endl;
-    map <int,string>::iterator i=M.begin();
+    //map <int,string>::iterator i = M.begin();  Better use auto
+    auto i = M.begin();
     while(i!=M.end())
     {
         cout<<i->first<<" "<<i->second<<endl;
