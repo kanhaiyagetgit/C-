@@ -66,7 +66,6 @@ int main()
     bst obj;
     bst *nodeObj;
     int data;
-    int i=0;
     while(1)
     {
         cout<<"Enter choice";
