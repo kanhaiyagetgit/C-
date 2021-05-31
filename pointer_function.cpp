@@ -1,17 +1,13 @@
 #include<iostream>
 using namespace std;
-int * add(int a,int b)
+int * add()
 {
-    int *p;
-    int c=0;
-    c=a+b;
-    p=&c;
-    return p;
+    static int a=10;
+    return &a;
 }
 int main()
 {
-    int x=2,y=3;
-    int *p=add(x,y);
+    
+    int *p=add();
     cout<<*p;
-    return 0;
 }
