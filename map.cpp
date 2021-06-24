@@ -7,9 +7,10 @@ int main()
     map <int,string> M{
         {1,"kishan is good"},
         {2,"kanhaiya as well"},
-        {3,"Gudo"},
+        {3,"Gudo"}
     };
     M.insert(pair<int,string>(4,"Pyaroo"));
+    M.insert(make_pair(5, "Pyaroo"));
     cout<<M[2]<<endl;
     //map <int,string>::iterator i = M.begin();  Better use auto
     auto i = M.begin();

@@ -7,17 +7,22 @@ public:
 A(int x)
 {
 s=x;
-cout<<s<<endl;
 }
-A(A &m)
+A(const A &a)
 {
-s=m.s;
+s=a.s;
 cout<<s<<endl;
 }
+
+void show(){
+    cout<<s;
+}
+
 };
 int main()
 {
 A a(5);
-A b(a);
+A b=a;
+b.show();
 return 0;
 }
