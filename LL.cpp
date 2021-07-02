@@ -23,6 +23,12 @@ void insert(n *head,int data){
     if(temp->next==NULL)
     temp->next=create(data);
 }
+//Whenever u need to update head pointer use **head as a parameter
+void insertAtBeginning(n **head,int a){
+    n *begNode=create(a);
+    begNode->next=*head;
+    *head=begNode;
+}
 
 void deleteNode(n **head,int a){
     if(!head){
@@ -30,6 +36,7 @@ void deleteNode(n **head,int a){
     return;
     }
     n *p= *head;
+    //delete head if head is not the only element
     if(p->data==a && p->next!=NULL){
         *head=p->next;
         delete p;
@@ -46,9 +53,11 @@ void deleteNode(n **head,int a){
 	cout<<"Value not found";
     return;
     }
+    //Here p is pointing to the node before the one to be deleted
     n *temp=p->next;
 	p->next=p->next->next;
 	delete temp;
+    temp=NULL;
 }
 
 void printNormal(n *head){
@@ -70,6 +79,8 @@ int main(){
     insert(head,2);
     insert(head,3);
     insert(head,4);
+    insertAtBeginning(&head,0);
+    printNormal(head);
     printReverse(head);
     cout<<endl;
     printNormal(head);
