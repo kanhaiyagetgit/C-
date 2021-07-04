@@ -1,8 +1,8 @@
 #include<iostream>
 using namespace std;
 
-class n{
-    public:
+struct n{
+    //public:
     int data;
     n *next;
 };
@@ -28,6 +28,25 @@ void insertAtBeginning(n **head,int a){
     n *begNode=create(a);
     begNode->next=*head;
     *head=begNode;
+}
+
+void deleteFrmLastIndex(n *head,int index){
+    n *p=head;
+    int count=0;
+    while(p!=NULL){
+        p=p->next;
+        count++;
+    }
+    int prev=count-index;
+    p=head;
+    while(prev>1){
+        p=p->next;
+        prev--;
+    }
+    n *temp=p->next;
+    p->next=temp->next;
+    temp->next=NULL;
+    delete temp;
 }
 
 void deleteNode(n **head,int a){
@@ -74,6 +93,30 @@ void printReverse(n *head){
     cout<<head->data<<" ";
 }
 
+void reverseLL(n **head){
+    n *cp=NULL;
+    n *c=*head;
+    n *cn=c->next;
+    while(cn!=NULL){
+        c->next=cp;
+        cp=c;
+        c=cn;
+        cn=cn->next;
+    }
+    c->next=cp;
+    *head=c;
+}
+
+void findMiddle(n *head){
+    n *p=head;
+    n *q=head;
+    while(q!=NULL && q->next!=NULL){
+        p=p->next;
+        q=q->next->next;
+    }
+    cout<<p->data;
+}
+
 int main(){
     n *head=create(1);
     insert(head,2);
@@ -81,6 +124,17 @@ int main(){
     insert(head,4);
     insertAtBeginning(&head,0);
     printNormal(head);
+    cout<<endl;
+    deleteFrmLastIndex(head,2);
+    cout<<"Hi";
+    printNormal(head);
+    cout<<"Hi";
+    cout<<endl;
+    findMiddle(head);
+    reverseLL(&head);
+    cout<<endl;
+    printNormal(head);
+    cout<<endl;
     printReverse(head);
     cout<<endl;
     printNormal(head);
